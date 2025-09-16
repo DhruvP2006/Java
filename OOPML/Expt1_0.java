@@ -1,3 +1,4 @@
+package OOPML;
 import java.util.Scanner;
 
 public class Expt1_0{
