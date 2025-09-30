@@ -66,7 +66,7 @@ class EmployeeManager {
         }
 
         if (!found) {
-            System.out.println("Employee with name " + name + " not found.");
+            System.out.println("Employee with name '" + name + "' not found.");
         }
     }
 
@@ -86,6 +86,42 @@ class EmployeeManager {
         for (Employee e : employees) {
             System.out.println(e);
         }
+    }
+    
+    public boolean add(Employee e) {
+        this.insert(e);
+        return true;
+    }
+    
+    public void addElement(Employee obj) {
+        this.add(obj);
+    }
+    
+    public void removeElementAt(int index) {
+        if (index >= 0 && index < employees.size()) {
+            employees.remove(index);
+        } else {
+            System.out.println("Error: Cannot remove element. Index " + index + " is out of bounds.");
+        }
+    }
+    
+    public int lastIndexOf(Object o, int index) {
+        if (index >= employees.size()) {
+             throw new IndexOutOfBoundsException("Index: "+ index +", Size: "+ employees.size());
+        }
+
+        if (o instanceof Employee) {
+            Employee searchEmployee = (Employee) o;
+            int searchId = searchEmployee.getEId();
+
+            for (int i = index; i >= 0; i--) {
+                if (employees.get(i).getEId() == searchId) {
+                    return i;
+                }
+            }
+        }
+        
+        return -1;
     }
 }
 
@@ -116,21 +152,21 @@ public class Expt6_0 {
             }
 
             manager.create(empList);
-            System.out.println("\n--- Employees after Create() ---");
+            System.out.println("\n--- Employees after Create() [Sorted by Salary] ---");
             manager.displayAll();
 
             System.out.println("\nEnter details of Employee to Insert:");
             System.out.print("Name: ");
-            String name = sc.nextLine();
+            String insertName = sc.nextLine();
 
             System.out.print("ID: ");
-            int id = sc.nextInt();
+            int insertId = sc.nextInt();
 
             System.out.print("Salary: ");
-            double salary = sc.nextDouble();
+            double insertSalary = sc.nextDouble();
             sc.nextLine();
 
-            manager.insert(new Employee(name, id, salary));
+            manager.insert(new Employee(insertName, insertId, insertSalary));
             System.out.println("\n--- After Insert() ---");
             manager.displayAll();
 
@@ -150,4 +186,3 @@ public class Expt6_0 {
         }
     }
 }
-
