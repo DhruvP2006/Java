@@ -27,10 +27,10 @@ public void printInfo(String name, int age){
   System.out.println(name +""+age);
 }  
 
-//   public void printInfo(){
-//     System.out.println(this.name);
-//   System.out.println(this.age);
-//   }
+  public void printInfo(){
+    System.out.println(this.name);
+  System.out.println(this.age);
+  }
 
 //   Student(Student s2){
 // this.name = s2.name;
@@ -42,19 +42,22 @@ public void printInfo(String name, int age){
 //   }
 }
 
+
 public class practice11{
   public static void main(String args[]){
-    // Pen pen1 = new Pen();
-    // pen1.color = "blue";
-    // pen1.type = "gel";
-    // pen1.write();
+   
 
-    // Pen pen2 = new Pen();
-    // pen2.color = "black";
-    // pen2.type = "ballpoint";
+    Pen pen1 = new Pen();
+    pen1.color = "blue";
+    pen1.type = "gel";
+    pen1.write();
 
-    // pen1.printColor();
-    // pen2.printColor();
+    Pen pen2 = new Pen();
+    pen2.color = "black";
+    pen2.type = "ballpoint";
+
+    pen1.printColor();
+    pen2.printColor();
 
     Student s1 = new Student();
     s1.name = "aman";

@@ -1,5 +1,5 @@
 import java.util.*;
-import bank.bank;
+import bank;
 
 class Shape{
     public void area(){
